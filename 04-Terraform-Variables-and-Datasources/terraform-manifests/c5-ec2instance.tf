@@ -4,7 +4,7 @@ resource "aws_instance" "myec2vm" {
   instance_type = var.instance_type
   user_data = file("${path.module}/app1-install.sh")
   key_name = var.instance_keypair
-  vpc_security_group_ids = [aws_security_group.vpc_ssh.id, aws_security_group.vpc-ssh_web.id]
+  vpc_security_group_ids = [aws_security_group.vpc_ssh.id, aws_security_group.vpc_ssh_web.id]
   tags = {
     "Name" = "EC2 Demo 2"
   }
