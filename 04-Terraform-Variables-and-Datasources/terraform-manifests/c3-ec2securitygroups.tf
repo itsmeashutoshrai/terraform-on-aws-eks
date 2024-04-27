@@ -1,7 +1,7 @@
 resource "aws_security_group" "vpc_ssh" {
   name        = "vpc-ssh"
   description = "Allow vpc-ssh traffic"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = data.aws_vpc.selected.id
   tags = {
     Name = "vpc-ssh"
   }
@@ -24,7 +24,7 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
 resource "aws_security_group" "vpc_ssh_web" {
   name        = "vpc-ssh-web"
   description = "Allow vpc-ssh traffic"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = data.aws_vpc.selected.id
   tags = {
     Name = "vpc-ssh-web"
   }
