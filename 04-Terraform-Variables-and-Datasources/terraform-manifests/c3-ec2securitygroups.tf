@@ -26,7 +26,7 @@ resource "aws_security_group" "vpc-ssh-web" {
   description = "Allow vpc-ssh traffic"
   vpc_id      = aws_vpc.main.id
   tags = {
-    Name = "vpc-ssh"
+    Name = "vpc-ssh-web"
   }
 }
 resource "aws_vpc_security_group_ingress_rule" "vpc-ssh_ipv4_web" {
