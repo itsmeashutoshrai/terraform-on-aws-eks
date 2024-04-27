@@ -19,6 +19,3 @@ data "aws_ami" "ubuntu_free_tier" {
     values = ["x86_64"]
   }
 }
-data "aws_vpc" "selected" {
-  id = var.vpc_id
-}
