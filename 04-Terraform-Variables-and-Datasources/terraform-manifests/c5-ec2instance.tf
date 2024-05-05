@@ -11,3 +11,22 @@ resource "aws_instance" "myec2vm" {
     "Name" = "EC2 Demo 2"
   }
 }
+
+resource "aws_vpc" "my_vpc" {
+#  cidr_block = "172.16.0.0/16"
+   cidr_block = var.test_vpc_cidr_input
+
+  tags = {
+    Name = "tf-example-aws-vpc-$(var.test_vpc_cidr_input)"
+  }
+}
+
+resource "aws_subnet" "my_subnet" {
+  vpc_id            = aws_vpc.my_vpc.id
+  # cidr_block        = "172.16.10.0/24"
+  cidr_block        = var.test_vpc_subnet
+
+  tags = {
+    Name = "tf-example-aws-subnet-$(var.test_vpc_subnet)""
+  }
+}

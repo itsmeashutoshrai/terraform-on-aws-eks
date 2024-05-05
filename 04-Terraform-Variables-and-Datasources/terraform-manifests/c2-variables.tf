@@ -20,4 +20,16 @@ variable "instance_keypair" {
   default = "test-key-pair"
 }
 
+# AWS VPC_Creation Self for referencing test
+variable "test_vpc_cidr_input" {
+  description = "Provide the cidr block information for referencing test for aws_vpc"
+  type = string
+}
+
+# AWS subet cidr block for referencing test
+variable "test_vpc_subnet" {
+  description = "Provide the cidr block information for referencing test for aws_subnet"
+  type = string
+}
+
 
