@@ -22,3 +22,8 @@ output "default_cidr_block" {
 output "created_subnets" {
   value = { for subnet_id, subnet in aws_subnet.mytestsubnet : subnet_id => subnet.cidr_block }
 }
+
+# Output the default VPC ID
+output "default_vpc_id" {
+  value = data.aws_vpc.selected.id
+}

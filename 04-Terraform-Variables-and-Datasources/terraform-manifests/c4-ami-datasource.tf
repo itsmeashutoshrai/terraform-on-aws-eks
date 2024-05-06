@@ -21,5 +21,5 @@ data "aws_ami" "ubuntu_free_tier" {
 }
 # datasource for default vpc
 data "aws_vpc" "selected" {
-  id = var.vpc_id
+  default = true
 }

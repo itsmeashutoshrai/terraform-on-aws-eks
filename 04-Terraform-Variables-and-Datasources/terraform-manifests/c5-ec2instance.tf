@@ -34,7 +34,7 @@ resource "aws_subnet" "my_subnet" {
 # Deploy the private subnets
 resource aws_subnet "mytestsubnet" {
   for_each = var.private_subnets
-  cidr_blocks = cidrsubnet(data.aws_vpc.selected.cidr_block,8,each.value)
-  vpc_id = aws_vpc.vpc.id
+  cidr_block = cidrsubnet(data.aws_vpc.selected.cidr_block,8,each.value)
+  vpc_id = data.aws_vpc.selected.id
 }
 
