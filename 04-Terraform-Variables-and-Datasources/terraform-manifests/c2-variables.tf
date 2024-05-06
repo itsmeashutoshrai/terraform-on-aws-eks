@@ -32,4 +32,15 @@ variable "test_vpc_subnet" {
   type = string
 }
 
+# Variables for private subnet test
+variable "private_subnets" {
+  type = map(number)
+  default = {
+    "subnet-0" = 0
+    "subnet-1" = 1
+    "subnet-2" = 2
+  }
+}
 
+# vpc_cidr test
+variable "vpc_id" {}

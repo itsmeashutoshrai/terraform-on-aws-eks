@@ -11,7 +11,7 @@ resource "aws_instance" "myec2vm" {
     "Name" = "EC2 Demo 2"
   }
 }
-#*
+/*
 resource "aws_vpc" "my_vpc" {
 #  cidr_block = "172.16.0.0/16"
    cidr_block = var.test_vpc_cidr_input
@@ -30,4 +30,11 @@ resource "aws_subnet" "my_subnet" {
     Name = "tf-example-aws-subnet-$(var.test_vpc_subnet)"
   }
 }
-*#
+*/
+# Deploy the private subnets
+resource aws_subnet "mytestsubnet" {
+  for_each = var.private_subnets
+  cidr_blocks = cidrsubnet(data.aws_vpc.selected.cidr_block,8,each.value)
+  vpc_id = aws_vpc.vpc.id
+}
+
