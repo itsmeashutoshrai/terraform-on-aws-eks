@@ -14,8 +14,9 @@ resource "aws_instance" "myec2vm" {
 # To check the for_each_condition:
    "Name" = "ec2-${each.key}"
     tag = each.value
-  }
+  
 */
+  }
 }
 /*
 resource "aws_vpc" "my_vpc" {
