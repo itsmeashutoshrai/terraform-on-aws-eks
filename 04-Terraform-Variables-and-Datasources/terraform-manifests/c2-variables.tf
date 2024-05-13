@@ -30,6 +30,7 @@ variable "private_subnets" {
   }
 }
 */
+/*
 variable "add_tag_using_for_each" {
   type = map(string)
   default = {
@@ -37,4 +38,5 @@ variable "add_tag_using_for_each" {
     "team" = "backend"
   }
 }
+*/
 
