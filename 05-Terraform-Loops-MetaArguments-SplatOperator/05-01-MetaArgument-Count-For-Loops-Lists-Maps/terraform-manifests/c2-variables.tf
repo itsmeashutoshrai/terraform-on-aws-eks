@@ -37,3 +37,11 @@ variable "instance_type_map" {
     "prod" = "t3.large"
   }
 }
+
+variable add_tag_using_for_each {
+  type = map(string)
+  default = {
+    "env" = "prod"
+    "team" = "backend"
+  }
+}

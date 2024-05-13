@@ -19,7 +19,7 @@ variable "instance_keypair" {
   type = string
   default = "test-key-pair"
 }
-
+/*
 # Variables for private subnet test
 variable "private_subnets" {
   type = map(number)
@@ -29,3 +29,12 @@ variable "private_subnets" {
     "subnet-2" = 2
   }
 }
+*/
+variable "add_tag_using_for_each" {
+  type = map(string)
+  default = {
+    "env" = "prod"
+    "team" = "backend"
+  }
+}
+

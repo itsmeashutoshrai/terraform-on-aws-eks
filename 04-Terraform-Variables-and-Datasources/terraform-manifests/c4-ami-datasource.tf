@@ -19,7 +19,9 @@ data "aws_ami" "ubuntu_free_tier" {
     values = ["x86_64"]
   }
 }
-# datasource for default vpc
+/*
+# datasource for default vpc to fetch the default vpc id in c6-output.tf file and used in ec2instance.tf #file
 data "aws_vpc" "selected" {
   default = true
 }
+*/
