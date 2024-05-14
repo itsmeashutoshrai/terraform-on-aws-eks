@@ -29,11 +29,11 @@ variable "environments" {
     ))
     default = {
         "dev" = {
-            region = "us-west-1"
+            region = "ap-south-1"
             size   = "t2.micro"
             },
         "prod" = {
-            region = "ap-south-1"
+            region = "us-west-1"
             size   = "t2.micro"
             }
     }  

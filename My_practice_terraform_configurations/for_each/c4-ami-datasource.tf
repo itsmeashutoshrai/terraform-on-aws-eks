@@ -2,11 +2,11 @@ data "aws_ami" "test-ubuntu_free_tier" {
     most_recent = true
     owners = ["amazon"]
     filter  {
-        name = "Root device type"
+        name = "root-device-type"
         values = ["ebs"]
     }
     filter  {
-        name = "Virtualization"
+        name = "virtualization-type"
         values = ["hvm"]
     }
     filter  {
