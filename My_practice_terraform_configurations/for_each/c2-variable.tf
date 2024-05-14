@@ -5,6 +5,14 @@ variable "test-key" {
     type = string
     default = "test-key-pair"
 }
+
+# AWS Region
+variable "aws_region" {
+  description = "Region in which AWS Resources to be created"
+  type = string
+  default = "ap-south-1"
+}
+
 # Default size
 variable "test_instance_type" {
     description = "t2.micro or t3.micro....etc"
