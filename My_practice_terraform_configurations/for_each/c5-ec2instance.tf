@@ -1,7 +1,7 @@
 #resource block
 resource "aws_instance" "myec2vm" {
     for_each = var.environments
-    ami = data.test-ubuntu_free_tier.id
+    ami = data.aws_ami.test-ubuntu_free_tier.id
     key_name= var.test-key
     instance_type = each.value.size
     availability_zone = each.value.region
