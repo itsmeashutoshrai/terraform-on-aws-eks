@@ -31,6 +31,6 @@ variable "environments" {
     }  
 
     }
-}
+
 
 

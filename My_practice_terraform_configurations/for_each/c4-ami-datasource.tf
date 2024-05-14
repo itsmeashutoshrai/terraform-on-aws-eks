@@ -4,11 +4,11 @@ data "aws_ami" "test-ubuntu_free_tier" {
 
     filter = {
         name = "Root device type"
-        values = "ebs"
+        values = ["ebs"]
     }
     filter = {
         name = "Virtualization"
-        values = "hvm"
+        values = ["hvm"]
     }
     filter = {
         name = "name"
