@@ -21,24 +21,26 @@ variable "test_instance_type" {
 }
 
 variable "environments" {
-    type = map(object(
-        {
-            region = string
-            size = string
-        }
-    ))
-    default = {
-        "dev" = {
-            region = "ap-south-1"
-            size   = "t2.micro"
-            },
-        "prod" = {
-            region = "us-west-1"
-            size   = "t2.micro"
-            }
-    }  
+  type = map(number)
+  default = {
+    dev  = 1
+    prod = 2
+  }
+}
 
+variable "instance_tags" {
+  type = map(map(string))
+  default = {
+    dev  = {
+      Environment = "development"
+      Project     = "my-project-for-development"
     }
+    prod = {
+      Environment = "production"
+      Project     = "my-project-for-production"
+    }
+  }
+}
 
 
 
