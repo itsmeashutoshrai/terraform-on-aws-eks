@@ -1,25 +1,3 @@
-terraform {
-#after commenting out remote or cloud backend and running apply will asks terraform init -migrate-state
-  /*
-  cloud {
-    organization = "Trials-App"
-
-    workspaces {
-      name = "my-test-workspace"
-    }
-  }
-  */
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = ">= 5.31"
-    }
-  }
-}
-provider "aws" {
-  region = "ap-south-1"
-  }
-
 # Create Security Group - SSH Traffic
 resource "aws_security_group" "vpc-ssh" {
   name        = "vpc-ssh"
@@ -76,31 +54,3 @@ resource "aws_security_group" "vpc-web" {
   }
 }
 
-# Declare the data source
-data "aws_availability_zones" "available" {
-  state = "available"
-}
-/*
-resource "aws_key_pair" "ashu_keypair" {
-  key_name   = "ashu-key"
-  public_key = file("~/.ssh/id_rsa.pub")
-}
-*/
-
-resource  "aws_instance" "my_instance" {
-  ami = "ami-0f58b397bc5c1f2e8"
-  instance_type = "t2.micro"
-  key_name = "test-key-pair"
-  availability_zone = data.aws_availability_zones.available.names[0]
-  vpc_security_group_ids = [aws_security_group.vpc-ssh.id, aws_security_group.vpc-web.id]
-  tags = {
-    Name = "my-server"
-   }
-  }
-output "public_ip" {
-  value = aws_instance.my_instance.public_ip
-}
-
-output "instance_id" {
-  value = aws_instance.my_instance.id
-}
