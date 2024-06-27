@@ -3,7 +3,8 @@ module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   #version = "4.0.1"  
   version = "5.4.0"
-    
+
+#https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest#output_public_subnets
   # VPC Basic Details
   name = "vpc-dev"
   cidr = "10.0.0.0/16"   

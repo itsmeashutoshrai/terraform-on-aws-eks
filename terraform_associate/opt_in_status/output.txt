@@ -1,0 +1,13 @@
+[0m[1mdata.aws_availability_zones.my_azones: Reading...[0m[0m
+[0m[1mdata.aws_availability_zones.my_azones: Read complete after 1s [id=ap-south-1][0m
+[0m[1mdata.aws_ec2_instance_type_offerings.my_ins_type["ap-south-1a"]: Reading...[0m[0m
+[0m[1mdata.aws_ec2_instance_type_offerings.my_ins_type["ap-south-1c"]: Reading...[0m[0m
+[0m[1mdata.aws_ec2_instance_type_offerings.my_ins_type["ap-south-1b"]: Reading...[0m[0m
+[0m[1mdata.aws_ec2_instance_type_offerings.my_ins_type["ap-south-1b"]: Read complete after 0s [id=ap-south-1][0m
+[0m[1mdata.aws_ec2_instance_type_offerings.my_ins_type["ap-south-1a"]: Read complete after 0s [id=ap-south-1][0m
+[0m[1mdata.aws_ec2_instance_type_offerings.my_ins_type["ap-south-1c"]: Read complete after 0s [id=ap-south-1][0m
+
+[0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
+
+[0mTerraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.

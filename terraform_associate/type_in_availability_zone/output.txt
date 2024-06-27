@@ -1,0 +1,7 @@
+[0m[1mdata.aws_ec2_instance_type_offerings.my_ins_type: Reading...[0m[0m
+[0m[1mdata.aws_ec2_instance_type_offerings.my_ins_type: Read complete after 0s [id=ap-south-1][0m
+
+[0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
+
+[0mTerraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.

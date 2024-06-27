@@ -24,7 +24,7 @@ data "aws_ec2_instance_type_offerings" "my_ins_type" {
   location_type = "availability-zone"
 }
 
-
+/*
 # Output-1
 # Basic Output: All Availability Zones mapped to Supported Instance Types
 output "output_v3_1" {
@@ -56,4 +56,10 @@ output "output_v3_4" {
   value = keys({
     for az, details in data.aws_ec2_instance_type_offerings.my_ins_type: 
     az => details.instance_types if length(details.instance_types) != 0 })[0]
+}
+*/
+
+#my test output
+output "test-for-instance-specificton-az" {
+    value = [for t in data.aws_ec2_instance_type_offerings.my_ins_type: t]
 }
