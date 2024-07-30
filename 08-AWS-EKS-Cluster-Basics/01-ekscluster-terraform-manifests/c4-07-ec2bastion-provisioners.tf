@@ -16,6 +16,7 @@ resource "null_resource" "copy_ec2_keys" {
     destination = "/tmp/eks-terraform-key.pem"
   }
 ## Remote Exec Provisioner: Using remote-exec provisioner fix the private key permissions on Bastion Host
+#Inline,script and upload
   provisioner "remote-exec" {
     inline = [
       "sudo chmod 400 /tmp/eks-terraform-key.pem"

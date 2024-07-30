@@ -446,7 +446,7 @@ ps -ef | grep kube
 # Verify kubelet-config.json
 cat /etc/kubernetes/kubelet/kubelet-config.json
 
-# Verify kubelet kubeconfig
+# Verify kubelet kubeconfig --> contains api-server related information
 cat /var/lib/kubelet/kubeconfig
 
 # Verify clusters.cluster.server value(EKS Cluster API Server Endpoint)  DNS resolution which is taken from kubeconfig

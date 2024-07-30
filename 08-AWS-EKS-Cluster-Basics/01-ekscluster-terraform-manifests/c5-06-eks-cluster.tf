@@ -6,11 +6,11 @@ resource "aws_eks_cluster" "eks_cluster" {
 
   vpc_config {
     subnet_ids = module.vpc.public_subnets
-    endpoint_private_access = var.cluster_endpoint_private_access
-    endpoint_public_access  = var.cluster_endpoint_public_access
+    endpoint_private_access = var.cluster_endpoint_private_access  
+    endpoint_public_access  = var.cluster_endpoint_public_access #If true ->If the EKS cluster's API #server endpoint is publicly accessible, you can directly interact with it over the internet. This #is typically configured with endpoint_public_access set to true.
     public_access_cidrs     = var.cluster_endpoint_public_access_cidrs    
   }
-
+#kubernetes_network_config kubernetes provider is given to manage the pods+cotains all necessary details to handle the pods
   kubernetes_network_config {
     service_ipv4_cidr = var.cluster_service_ipv4_cidr
   }
